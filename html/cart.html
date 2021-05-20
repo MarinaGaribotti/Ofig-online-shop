@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oFig - Votre Panier</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <strong class="site-title">oFig <span class="site-title__subtitle">Figurines et statuettes</span></strong>
+        <h1 class="page-title">Votre panier <em class="page-title__theme">3 produits</em></h1>
+    </header>
+    <main class="cart-container">
+        <!-- Emmet: section#cart>h2+form>table>thead>tr>th*3^^tbody>tr*3>td*2+td>input:number+a{supprimer}^^^tfoot>tr>td*2 -->
+        <section class="cart-parts" id="cart">
+            <h2 class="heading2">Votre panier</h2>
+            <form action="">
+                <table class="cart-content">
+                    <thead>
+                        <tr>
+                            <th class="cart-content__col-title">Figurine</th>
+                            <th class="cart-content__col-title">Prix unitaire</th>
+                            <th class="cart-content__col-title">Quantité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="cart-content__cell">Cloud Strife</td>
+                            <td class="cart-content__cell">59 &euro;</td>
+                            <td class="cart-content__cell"><input type="number" name="" id="" class="cart-content__qty" value="1"><a href="" class="cart-content__delete">supprimer</a></td>
+                        </tr>
+                        <tr>
+                            <td class="cart-content__cell">Tifa Lockhart</td>
+                            <td class="cart-content__cell">69 &euro;</td>
+                            <td class="cart-content__cell"><input type="number" name="" id="" class="cart-content__qty" value="1"><a href="" class="cart-content__delete">supprimer</a></td>
+                        </tr>
+                        <tr>
+                            <td class="cart-content__cell">Barret Wallace</td>
+                            <td class="cart-content__cell">69 &euro;</td>
+                            <td class="cart-content__cell"><input type="number" name="" id="" class="cart-content__qty" value="1"><a href="" class="cart-content__delete">supprimer</a></td>
+                        </tr>
+                        <tr>
+                            <td class="cart-content__cell">Cloud Strife</td>
+                            <td class="cart-content__cell">59 &euro;</td>
+                            <td class="cart-content__cell"><input type="number" name="" id="" class="cart-content__qty" value="1"><a href="" class="cart-content__delete">supprimer</a></td>
+                        </tr>
+                        <tr>
+                            <td class="cart-content__cell">Tifa Lockhart</td>
+                            <td class="cart-content__cell">69 &euro;</td>
+                            <td class="cart-content__cell"><input type="number" name="" id="" class="cart-content__qty" value="1"><a href="" class="cart-content__delete">supprimer</a></td>
+                        </tr>
+                        <tr>
+                            <td class="cart-content__cell">Barret Wallace</td>
+                            <td class="cart-content__cell">69 &euro;</td>
+                            <td class="cart-content__cell"><input type="number" name="" id="" class="cart-content__qty" value="1"><a href="" class="cart-content__delete">supprimer</a></td>
+                        </tr>
+                        <tr>
+                            <td class="cart-content__cell">Cloud Strife</td>
+                            <td class="cart-content__cell">59 &euro;</td>
+                            <td class="cart-content__cell"><input type="number" name="" id="" class="cart-content__qty" value="1"><a href="" class="cart-content__delete">supprimer</a></td>
+                        </tr>
+                        <tr>
+                            <td class="cart-content__cell">Tifa Lockhart</td>
+                            <td class="cart-content__cell">69 &euro;</td>
+                            <td class="cart-content__cell"><input type="number" name="" id="" class="cart-content__qty" value="1"><a href="" class="cart-content__delete">supprimer</a></td>
+                        </tr>
+                        <tr>
+                            <td class="cart-content__cell">Barret Wallace</td>
+                            <td class="cart-content__cell">69 &euro;</td>
+                            <td class="cart-content__cell"><input type="number" name="" id="" class="cart-content__qty" value="1"><a href="" class="cart-content__delete">supprimer</a></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" class="cart-content__total-label">Total de la commande :</td>
+                            <td class="cart-content__total-amount">197 &euro;</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+        </section>
+
+        <form action="">
+            <section class="cart-parts" id="shipping">
+                <h2 class="heading2">Préférences de livraison</h2>
+                <div class="form-group-container">
+                    <div class="form-group-container__part">
+                        <fieldset class="form-group">
+                            <!-- 
+                                Attributs des inputs :
+                                - type => type de l'input, voir https://www.w3schools.com/html/html_form_input_types.asp
+                                - name => le nom de la donnée qui sera transmise (permet de faire le lien avec l'input du form lorsqu'on reçoit les données)
+                                => "nom de code de la question"
+                                - value => la valeur qui sera transmise avec le name, pour cette donnée. Attention, dans un input:text, la value va pré-remplir le champ
+                                => réponse à la question
+                                - id => permet de faire le lien côté HTML avec la balise <label>
+                                - required => permet de forcer l'utilisateur à renseigner l'input/select/autre
+                                - checked => (radio & checkbox) permet de précocher/présélectionner l'input dès l'affichage de la page
+                            -->
+                            <legend class="form-subtitle">Où souhaitez-vous être livré ?</legend>
+                            <!-- Emmet: input:radio#current-address[name="where" value="current-address"]+label[for="current-address"]{Mon adresse courante} -->
+                            <div class="form-line">
+                                <input type="radio" name="where" id="current-address" value="home" required><label for="current-address">Mon adresse courante</label>
+                            </div>
+                            <!-- Emmet: input:radio#other-address[name="where" value="other-address" checked]+label[for="other-address"]{Autre adresse} -->
+                            <div class="form-line">
+                                <input type="radio" name="where" id="other-address" value="other-address" checked><label for="other-address">Autre adresse</label>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <legend class="form-subtitle">Options</legend>
+                            <!-- Emmet: input:checkbox#sms[name="option-sms"]+label[for="sms"]{Suivi de livraison par sms (inclus)} -->
+                            <div class="form-line">
+                                <input type="checkbox" name="option-sms" id="sms" checked><label for="sms">Suivi de livraison par sms (inclus)</label>
+                            </div>
+                            <!-- Emmet: input:checkbox#satisfy[name="option-satisfy"]+label[for="satisfy"]{Satisfait ou remboursé (+ 2 euros)} -->
+                            <div class="form-line">
+                                <input type="checkbox" name="option-satisfy" id="satisfy"><label for="satisfy">Satisfait ou remboursé (+ 2 euros)</label>
+                            </div>
+                            <!-- Emmet: input:checkbox#guarantee[name="option-guarantee"]+label[for="guarantee"]{Garantie 2 ans (+10 euros)} -->
+                            <div class="form-line">
+                                <input type="checkbox" name="option-guarantee" id="guarantee"><label for="guarantee">Garantie 2 ans (+10 euros)</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-group-container__part">
+                        <fieldset class="form-group">
+                            <legend class="form-subtitle">Adresse</legend>
+                            <!-- Emmet: label[for="form-address"]+input:text[name="address" id="form-address"] -->
+                            <label for="form-address" class="form-input-title">Rue</label><input type="text" name="address" id="form-address" placeholder="10 boulevard du F0F" class="form-input-element">
+                            <!-- Emmet: label[for="form-zipcode"]+input:text[name="zipcode" id="form-zipcode"] -->
+                            <label for="form-zipcode" class="form-input-title">Code postal</label><input type="text" name="zipcode" id="form-zipcode" class="form-input-element">
+                            <!-- Emmet: label[for="form-city"]+input:text[name="city" id="form-city"] -->
+                            <label for="form-city" class="form-input-title">Ville</label><input type="text" name="city" id="form-city" value="Bar-Le-Duc" class="form-input-element">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <legend class="form-subtitle">Informations complémentaires</legend>
+                            <!-- Emmet: label[for="form-infos"]+textarea[name="infos" id="form-infos"] -->
+                            <label for="form-infos" class="form-input-title">interphone, bâtiment, etc.</label><textarea class="form-input-element" name="infos" id="form-infos"></textarea>
+                        </fieldset>
+                    </div>
+                </div>
+            </section>
+            <section class="cart-parts">
+                <div class="total">
+                    <div class="total__title">Montant total à régler :</div>
+                    <div class="total__amount">197 €</div>
+                </div>
+            </section>
+            <section class="cart-parts">
+                <div class="cart-links">
+                    <a href="" class="btn btn--continue">Continuer vos achats</a>
+                    <button class="btn btn--valid">Valider et payer</button>
+                </div>
+            </section>
+        </form>
+    </main>
+    <footer class="copyright">
+        <p>
+            oFig - toutes les images sont sous copyright SquareEnix
+        </p>
+    </footer>
+    <div class="fixed-sales">
+        <a href="#soldes">soldes</a>
+    </div>
+</body>
+
+</html>

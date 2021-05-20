@@ -1,0 +1,420 @@
+html {
+    /* ici on peut définir ce qu'on appelle des "variables"
+    => on demande au navigateur de stocker une valeur, dans un "nom" */
+    --color1: #f0f;
+}
+
+body {
+    font-family: Raleway, Tahoma, sans-serif;
+}
+
+.site-title {
+    /* background-color: #c80000; */
+    background-color: var(--color1);
+    color: white;
+    display: block;
+    padding: 1rem;
+    font-weight: bold; /* = 700 */
+    font-size: 2em;
+}
+
+.site-title__subtitle {
+    font-size: 0.5em; /* => 1rem */
+}
+
+.page-title {
+    background-color: #666;
+    text-align: center;
+    color: white;
+    padding: 0.625rem;
+}
+
+.page-title__theme {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.article-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.product {
+    width: 28%;
+    min-width: 182px;
+    border: 1px solid #ccc;
+    margin: 1rem 0;
+    padding: 0.375rem; /* 6px */
+}
+
+.product__picture {
+    /* on laisse la largeur normale de l'image, mais on lui donne un maximum
+    c'est à dire 100% de l'espace disponible
+    => on dit donc à l'image de ne pas sortir de son cadre */
+    max-width: 100%;
+}
+
+.product__origin {
+    text-transform: uppercase;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 0.7em;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0 0 0.375rem 4px;
+}
+
+.product__name {
+    font-weight: bold;
+    font-size: 1.4em;
+    margin: 1rem 0;
+}
+
+.product__description {
+    font-size: 0.8em;
+    line-height: 1.4;
+    margin: 1rem 0;
+}
+
+.product__prices {
+    background-color: var(--color1);
+    padding: 0.7rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.product__add-to-cart {
+    font-size: 0.8em;
+}
+
+.product__price {
+    font-weight: bold;
+}
+
+.product__price--old {
+    font-weight: normal;
+    text-decoration: line-through;
+    font-size: 0.8em;
+}
+
+.copyright {
+    background-color: #666;
+    padding: 1rem;
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+/* Positions */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.article-container,
+.cart-container {
+    margin-top: 120px;
+}
+
+/* On oublie pas de mettre "position:relative" sur le parent
+grâce auquel on calcule les top/left/right/bottom de l'enfant en absolute */
+.product {
+    position: relative;
+}
+
+.product__percent {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    color: white;
+    background-color: #666;
+    font-weight: bold;
+    line-height: 52px; /* 60px - 4px - 4px de bordures */
+    border-radius: 50%; /* 30px */
+    border: 4px solid #ccc;
+    /* maintenant, on peut déplacer la pastille */
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+}
+
+.fixed-sales {
+    position: fixed;
+    left: 0;
+    top: calc(50% - 102px / 2);
+    background-color: var(--color1);
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 15px 8px 15px 5px;
+    text-align: center;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+/* === Cart === */
+.cart-container {
+    margin: 120px auto 2rem;
+    width: 80%;
+}
+
+.heading2 {
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-bottom: 1rem;
+}
+
+.cart-parts {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+}
+
+.cart-content {
+    margin: 1rem auto;
+    width: 90%;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.cart-content__col-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-content__cell {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.cart-content__qty {
+    width: 3rem;
+    margin-right: 0.375rem;
+}
+
+.cart-content__delete {
+    color: var(--color1);
+    font-size: 0.8em;
+    text-decoration: underline;
+}
+
+.cart-content__total-label {
+    padding: 1rem;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cart-content__total-amount {
+    padding: 1rem;
+    font-size: 1.6em;
+    text-align: center;
+    font-weight: bold;
+    color: var(--color1);
+}
+
+.form-group-container {
+    display: flex;
+}
+
+.form-group-container__part {
+    width: 50%;
+}
+
+.form-group {
+    margin: 2rem 0;
+}
+
+.form-line {
+    line-height: 1.6;
+}
+
+.form-subtitle {
+    font-weight: 700; /* = bold */
+    margin: 1.5rem 0;
+    color: #666;
+}
+
+.form-input-title {
+    display: block;
+    margin: 0.625rem 0.375rem 0.5rem;
+}
+
+.form-input-element {
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    margin: 0.3rem 0;
+    border: none; /* pour retirer les bordures par défaut des inputs */
+    border-bottom: 1px solid #ccc;
+    background-color: #f8f8f8;
+    display: block;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 90%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.total__title {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.5rem;
+}
+
+.total__amount {
+    padding: 1rem;
+    font-size: 1.6em;
+    text-align: center;
+    font-weight: bold;
+    color: var(--color1);
+}
+
+.cart-links {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem auto;
+    width: 90%;
+}
+
+.btn {
+    border: none;
+    padding: 1rem 1.6rem;
+    font-weight: bold;
+    letter-spacing: .05rem;
+    font-size: 1em;
+    border: 0;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.6;
+}
+
+.btn--continue {
+    background-color: #666;
+}
+
+.btn--valid {
+    background-color: var(--color1);
+}
+
+/* Bonus, une ligne grise sur 2, dans le table */
+/* nth-child => énième élément enfant de
+     => les balises td, enfant d'un tr (1 sur 2) dans le tableau
+   nth-child est une pseudo-classe (:)
+*/
+.cart-content tr:nth-child(odd) .cart-content__cell {
+    background-color: #eee;
+}
+
+/* ==== du fun ==== */
+
+/*.cart-content td:nth-child(odd) {
+    background-color: red;
+}*/
+
+/* on met un fond aqua sur la ligne 5 (le 5ème enfant) */
+.cart-content tr:nth-child(5) .cart-content__cell {
+    background-color: aqua;
+}
+
+.cart-content__cell {
+    transition: 2s;
+    transition-property: background;
+}
+
+/* permet d'appliquer les styles progressivement (1s) */
+.cart-content tr:hover .cart-content__cell {
+    background-color: aqua;
+}
+
+.product {
+    transition: 1s;
+    transition-property: transform filter;
+    background-color: white;
+    /*filter: grayscale(100%);*/
+}
+
+.product:hover {
+    transform: scale(1.2); /* rotate(360deg); */
+    /* filter: blur(10px); */
+    filter: grayscale(0%);
+    z-index: 20;
+}
+
+.fixed-sales {
+    transition: 4s;
+    transition-property: filter;
+}
+
+.fixed-sales:hover {
+    filter: hue-rotate(360deg);
+}
+
+/* pseudo éléments (::) => cibler un élément "virtuel" pas une balise HTML */
+.product__description::first-line {
+    color: #f0f;
+}
+
+.product__description::first-letter {
+    color: #0f0;
+    font-size: 2em;
+}
+
+.product__description:hover::first-letter {
+    color: #bada55;
+}
+
+/* ==== Responsive Web Design ==== */
+/* Attention, on n'est pas Mobile first ici, car le code CSS déjà fait au dessus, correspond à la version Desktop */
+/* SI, la largeur de l'écran ne dépasse pas 800px (width <= 800) */
+@media (max-width: 800px) {
+    .product {
+        width: 45%;
+    }
+}
+/* SI, la largeur de l'écran ne dépasse pas 480px (width <= 480) */
+@media (max-width: 480px) {
+    /* Alors, le navigateur va appliquer toutes les règles CSS suivantes */
+    .article-container {
+        width: 100%;
+    }
+
+    .product {
+        width: 100%;
+    }
+
+    .product figure {
+        text-align: center;
+    }
+
+    .product__picture {
+        height: 150px;
+    }
+
+    .fixed-sales {
+        display: none;
+    }
+}
+
+/*
+en desktop first (max-width) l'ordre css c'est du plus grand au plus petit
+en mobile first (min-width) l'ordre css c'est du plus petit au plus grand
+*/
